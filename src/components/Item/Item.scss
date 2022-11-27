@@ -1,0 +1,93 @@
+
+.item {
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+  border: 2px solid transparent;
+  cursor: pointer;
+  * {
+    cursor: pointer;
+    
+  }
+  &__content {
+    padding: 5px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 6px;
+  }
+
+  &__top {
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 450px;
+    }
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__price {
+    font-size: 14px;
+    background: #262626;
+    color: #3cf8aa;
+    position: absolute;
+    padding: 2px 5px;
+    bottom: 0;
+    left: 4px;
+    transition: .3s;
+  }
+
+  &__bpm {
+    font-size: 12px;
+    background: #262626;
+    color: #3cf8aa;
+    position: absolute;
+    padding: 2px 5px;
+    bottom: 0;
+    left: 55px;
+    transition: .3s;
+  }
+
+  &__year {
+    font-size: 12px;
+    background: #262626;
+    color: #3cf8aa;
+    position: absolute;
+    padding: 2px 5px;
+    bottom: 0;
+    left: 120px;
+    transition: .3s;
+  }
+
+  &__category {
+    font-size: 14px;
+    color: #919192;
+  }
+
+  &__stock {
+    color: black;
+  }
+
+  &__tag {
+    background: #ede734;
+    color: #000;
+    font-weight: 500;
+    border-radius: 2px;
+    max-width: max-content;
+    padding: 0 10px;
+  }
+
+  &:hover {
+    border-color:#3cf8aa;
+
+    .card {
+      &__price {
+        bottom: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  width: 100%;
+  background: #262626;
+  margin: 0 auto;
+
+  &__logo {
+    width: 50px;
+    height: 65px;
+    padding: 0;
+    height: auto;
+  }
+
+  &__nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+    color: white;
+    &-item {
+      color: #121212;
+      font-weight: 600;
+    }
+  }
+
+  &__buttons {
+    button {
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+  }
+
+  &__link {
+    transition: background-size .4s ease;
+    background: linear-gradient(to bottom, transparent 62%, #3cf8aa 0) center center/0% 25% no-repeat;
+    font-size: 18px;
+    border-radius: 40px;
+    padding: 0 12px 2px 12px;
+    cursor: pointer;
+    color: white;
+    letter-spacing: .08rem;
+    text-decoration: none;
+    &:hover {
+      background-size:78% 100%;
+    }
+    &--active{
+      background-size: 90% 100%;
+    }
+  }
+  &__cart{
+    font-size: 26px;
+    color:  #3cf8aa;
+    position: relative;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-qty{
+      position: absolute;
+      top: -10px;
+      right: -4px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: left;
+      min-width: 17px;
+    }
+  }
+}

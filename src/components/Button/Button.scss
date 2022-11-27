@@ -1,0 +1,20 @@
+.button {
+  background: #262626;
+  color: #fff;
+  height: max-content; 
+  /* width: max-content;  */
+  font-size: 16px;
+  padding: 8px 18px;
+  position: relative;
+  cursor: pointer;
+  
+  &:hover {
+    border-color:#3cf8aa;
+  }
+  &::after,
+  &::before {
+    border-color:#3cf8aa;
+    position: absolute;
+    content: "";
+  }
+}
