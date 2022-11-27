@@ -6,7 +6,7 @@ import { Button } from "../components/Button";
 import { useCartContext } from "../context/cartContext";
 
 export const Cart = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   //PROX CLASE
   const [name, setName] = useState("");
@@ -15,38 +15,37 @@ export const Cart = () => {
 
   const { getTotal, cart, emptyCart } = useCartContext();
 
-
   const createOrder = async () => {
-
-    const items = cart.map(({ id,imagen, song,artist, qty, precio }) => ({
+    const items = cart.map(({ id, imagen, song, artist, qty, precio }) => ({
       id,
       imagen,
-       title: song,
+      title: song,
       qty,
-       price: precio,
+      price: precio,
       artist: artist,
     }));
 
     const order = {
-      buyer: {name, phone, email},
+      buyer: { name, phone, email },
       items,
       total: getTotal(),
     };
 
-   const id =  await addOrder(order);
-   
-    await updateManyProducts(items)
+    const id = await addOrder(order);
+
+    await updateManyProducts(items);
 
     emptyCart();
 
-     navigate("/") 
+    navigate("/");
   };
   return (
     <div className="content">
       {cart.map((product) => (
         <div
+          className="cart__items"
           key={product.id}
-          artist= {product.artist}
+          artist={product.artist}
           style={{
             display: "flex",
             gap: 50,
@@ -54,12 +53,21 @@ export const Cart = () => {
             alignItems: "center",
             width: "60%",
             justifyContent: "space-between",
-            color: "#3cf8aa;" 
           }}
         >
-          <div><img src={product.imagen}width = "80" height = "80" alignItems = "left"alt="CoverIMG" /></div>
-          <div style={{fontWeight: 700}}>{product.song}</div>
-        <div>{product.artist}</div>
+          <div>
+            <img
+              src={product.imagen}
+              width="80"
+              height="80"
+              alignItems="left"
+              alt="CoverIMG"
+            />
+          </div>
+          <div style={{ fontWeight: 700, display: "flex", gap: 50 }}>
+            {product.song}
+          </div>
+          <div className="">{product.artist}</div>
           <div>Cantidad : {product.qty}</div>
         </div>
       ))}
@@ -74,20 +82,20 @@ export const Cart = () => {
       >
         ${getTotal()}
       </span>
-      <div style={{ display: "grid", gap: 15 }}>
+      <div className="form" style={{ display: "grid", gap: 15 }}>
         <span>Nombre</span>
         <input
-          style={{ border: "1px #3cf8aa", height: 40 }}
+          className="form__input"
           onChange={(e) => setName(e.target.value)}
         />
         <span>Telefono</span>
         <input
-          style={{ border: "1px solid black", height: 40 }}
+          className="form__input"
           onChange={(e) => setPhone(e.target.value)}
         />
         <span>Email</span>
         <input
-          style={{ border: "1px solid black", marginBottom: 15, height: 40 }}
+          className="form__input"
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>

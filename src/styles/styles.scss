@@ -100,4 +100,23 @@ button {
   height: "10";
   border-color: #3cf8aa;
   border-radius: 1px;
+  &__items {
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content:left;
+  
+    }
+}
+
+.form {
+  display: grid;
+  gap: 60;
+  margin-bottom: 10px;
+  &__input {
+    border: "1px solid black";
+    height: 40px;
+   margin-bottom: 15px;
+  }
 }
