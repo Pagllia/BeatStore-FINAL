@@ -30,7 +30,7 @@ export const Detail = () => {
     <div className="content detail">
       <img src={product.imagen} alt="CoverIMG"/>
       <div className="detail__info">
-        <span className="detail__info-name">{product?.song} {product?.artist}</span>
+        <span className="detail__info-name">{product?.song} - {product?.artist}</span>
         
         <span className="detail__info-category">{product?.categoria}</span>
         <span className="detail__info-price">

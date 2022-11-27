@@ -28,7 +28,7 @@ return (
       <Button
         onClick={(e) => {
           e.stopPropagation();
-          addProduct({id, song, precio, categoria, imagen}, 1)
+          addProduct({id, song, precio, categoria,artist, imagen}, 1)
         }}
       >
         Añadir al carrito

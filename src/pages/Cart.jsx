@@ -24,7 +24,7 @@ export const Cart = () => {
        title: song,
       qty,
        price: precio,
-       artist,
+      artist: artist,
     }));
 
     const order = {
@@ -54,11 +54,12 @@ export const Cart = () => {
             alignItems: "center",
             width: "60%",
             justifyContent: "space-between",
+            color: "#3cf8aa;" 
           }}
         >
           <div><img src={product.imagen}width = "80" height = "80" alignItems = "left"alt="CoverIMG" /></div>
-          <div style={{fontWeight: 700}}>{product.song} - {product.artist}</div>
-        
+          <div style={{fontWeight: 700}}>{product.song}</div>
+        <div>{product.artist}</div>
           <div>Cantidad : {product.qty}</div>
         </div>
       ))}
@@ -73,10 +74,10 @@ export const Cart = () => {
       >
         ${getTotal()}
       </span>
-      <div style={{ display: "grid", gap: 10 }}>
+      <div style={{ display: "grid", gap: 15 }}>
         <span>Nombre</span>
         <input
-          style={{ border: "1px solid black", height: 40 }}
+          style={{ border: "1px #3cf8aa", height: 40 }}
           onChange={(e) => setName(e.target.value)}
         />
         <span>Telefono</span>
