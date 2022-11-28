@@ -1,5 +1,5 @@
-import { Item } from "../Item";
-import { Loader } from "../Loader/Loader";
+import {Item} from "../Item";
+import {Loader} from "../Loader/Loader";
 
 const ItemContainer = ({ products, loading }) => {
   return (
