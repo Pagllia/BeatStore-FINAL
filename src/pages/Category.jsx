@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../api/products";
 import { ItemContainer } from "../components/ItemContainer";
+import { getProducts } from "../api/products";
+
 
 export const Category = () => {
   const { categoryId } = useParams();
@@ -22,8 +23,8 @@ export const Category = () => {
   return (
     <>
       <div className="content">
-        <h2>
-          Lo mejor en la categoría <span>{categoryId}</span>{" "}
+        <h2 >
+          The best songs of <div>{categoryId.toUpperCase()}</div>
         </h2>
       </div>
       <main className="content">

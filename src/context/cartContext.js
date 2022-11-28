@@ -12,7 +12,6 @@ export const CartProvider = ({ children }) => {
     setCart(newCart);
   };
 
-
   const addProduct = (item, qty) => {
     const element = cart.find((product) => product.id === item.id);
 
@@ -27,12 +26,12 @@ export const CartProvider = ({ children }) => {
     setCart(newCart);
   };
 
-  const getTotal = () => cart.reduce((acc, product) => acc + product.precio * product.qty ,0)
+  const getTotal = () =>
+    cart.reduce((acc, product) => acc + product.precio * product.qty, 0);
 
-  const getCartQty = () => cart.reduce((acc,product) => acc + product.qty , 0);
+  const getCartQty = () => cart.reduce((acc, product) => acc + product.qty, 0);
 
-  const emptyCart = () => setCart([])
-  
+  const emptyCart = () => setCart([]);
 
   const value = {
     cart,
@@ -40,8 +39,12 @@ export const CartProvider = ({ children }) => {
     removeProduct,
     getCartQty,
     getTotal,
-    emptyCart
+    emptyCart,
   };
 
-  return <CartContext.Provider value={value} displayName="cartContext">{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={value} displayName="cartContext">
+      {children}
+    </CartContext.Provider>
+  );
 };

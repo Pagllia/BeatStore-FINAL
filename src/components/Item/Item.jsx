@@ -18,7 +18,6 @@ return (
     </div>
     <div
       className="item__content"
-      onClick={() => alert("Presiono contenido")}
     >
       <span className="item__name">{song} - "{year}"</span>
       <span className="item__name">{artist}</span>

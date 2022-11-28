@@ -1,15 +1,14 @@
-import "./styles/styles.scss";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/cartContext";
+import { UserLayout } from "./components/UserLayout";
 import { Home } from "./pages/Home";
 import { Category } from "./pages/Category";
 import { Detail } from "./pages/Detail";
-import { UserLayout } from "./components/UserLayout";
-import { CartProvider } from "./context/cartContext";
 import { Cart } from "./pages/Cart";
+import "./styles/styles.scss";
 
 function App() {
-  console.log(process.env.FIREBASE_API_KEY)
+  console.log(process.env.FIREBASE_API_KEY);
   return (
     <div className="App">
       <CartProvider>

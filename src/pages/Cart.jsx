@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCartContext } from "../context/cartContext";
 import { addOrder } from "../api/orders";
 import { updateManyProducts } from "../api/products";
 import { Button } from "../components/Button";
-import { useCartContext } from "../context/cartContext";
 
 export const Cart = () => {
   const navigate = useNavigate();
-
-  //PROX CLASE
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -68,7 +66,7 @@ export const Cart = () => {
             {product.song}
           </div>
           <div className="">{product.artist}</div>
-          <div>Cantidad : {product.qty}</div>
+          <div>Cantidad: {product.qty}</div>
         </div>
       ))}
       <span

@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts} from "../api/products";
-
 import { ItemContainer } from "../components/ItemContainer";
-
 
 export const Home = () => {
   const [products, setProducts] = useState([]);
@@ -20,12 +18,9 @@ export const Home = () => {
   }, []);
 
   return (
-    <>
-     
       <main className="content">
         <ItemContainer products={products} loading={loading} />
       </main>
       
-    </>
   );
 };
